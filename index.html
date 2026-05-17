@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stone's Throw Winery - Only All-California-Grape Door County Winery - Search-Visibility Audit</title>
+<meta name="description" content="A search-visibility audit for Stone's Throw Winery: the only all-California-grape winery in Door County, 28 years of one-barrel-at-a-time micro-vinification, featured in Wine Spectator, Food Network, and Wine Enthusiast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --burgundy:#4a0e1f;
+    --burgundy-deep:#33091a;
+    --burgundy-light:#6a1a30;
+    --cream:#f6efe2;
+    --cream-soft:#fbf6ea;
+    --cream-deep:#ece2cc;
+    --gold:#b08947;
+    --gold-soft:#c9a165;
+    --gold-deep:#8e6a32;
+    --ink:#1f1410;
+    --ink-soft:#3d2a22;
+    --line:rgba(74,14,31,0.16);
+    --shadow:0 12px 36px rgba(51,9,26,0.10);
+    --radius:6px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    color:var(--burgundy-deep);
+    font-weight:600;
+    letter-spacing:-0.01em;
+    line-height:1.2;
+  }
+  h1{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:700}
+  h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:1.2rem}
+  h3{font-size:1.35rem;margin-bottom:0.7rem}
+  h4{font-size:1.1rem;margin-bottom:0.5rem;color:var(--burgundy)}
+  p{margin-bottom:1rem;color:var(--ink-soft)}
+  a{color:var(--burgundy);text-decoration:none;border-bottom:1px solid rgba(74,14,31,0.25);transition:all 0.2s ease}
+  a:hover{color:var(--gold-deep);border-bottom-color:var(--gold)}
+  .container{max-width:1080px;margin:0 auto;padding:0 1.6rem}
+  .container-narrow{max-width:820px;margin:0 auto;padding:0 1.6rem}
+
+  /* Header */
+  header{
+    background:var(--burgundy-deep);
+    border-bottom:3px solid var(--gold);
+    padding:1.1rem 0;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 14px rgba(51,9,26,0.18);
+  }
+  .nav-wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .brand{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.55rem;
+    color:var(--cream);
+    font-weight:600;
+    letter-spacing:0.02em;
+    border:none;
+  }
+  .brand span{color:var(--gold-soft);font-style:italic}
+  nav ul{list-style:none;display:flex;gap:1.8rem;flex-wrap:wrap}
+  nav a{
+    color:var(--cream-soft);
+    font-size:0.92rem;
+    font-weight:400;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    border:none;
+  }
+  nav a:hover{color:var(--gold-soft)}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(155deg,var(--burgundy-deep) 0%,var(--burgundy) 60%,var(--burgundy-light) 100%);
+    color:var(--cream);
+    padding:5.5rem 0 4rem;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold) 50%,transparent);
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold-soft) 50%,transparent);
+    opacity:0.5;
+  }
+  .hero h1{color:var(--cream);max-width:880px;margin:0 auto 1.4rem}
+  .hero h1 em{color:var(--gold-soft);font-style:italic;font-weight:500}
+  .hero-sub{
+    font-size:1.15rem;
+    color:var(--cream-deep);
+    max-width:680px;
+    margin:0 auto 2.8rem;
+    line-height:1.55;
+  }
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.4rem;
+    max-width:880px;
+    margin:0 auto;
+  }
+  .stat-card{
+    background:rgba(246,239,226,0.06);
+    border:1px solid rgba(176,137,71,0.35);
+    padding:1.6rem 1.2rem;
+    border-radius:var(--radius);
+    backdrop-filter:blur(4px);
+  }
+  .stat-num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2.7rem;
+    font-weight:700;
+    color:var(--gold-soft);
+    line-height:1;
+    margin-bottom:0.4rem;
+  }
+  .stat-label{
+    font-size:0.85rem;
+    color:var(--cream-deep);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-weight:500;
+  }
+
+  /* Trust band */
+  .trust-band{
+    background:var(--cream-soft);
+    border-top:1px solid var(--gold);
+    border-bottom:1px solid var(--line);
+    padding:1.6rem 0;
+  }
+  .trust-inner{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:0.6rem 1.4rem;
+    text-align:center;
+  }
+  .trust-item{
+    font-size:0.88rem;
+    color:var(--burgundy);
+    font-weight:500;
+    letter-spacing:0.01em;
+  }
+  .trust-dot{color:var(--gold);font-weight:700;font-size:1.1rem}
+
+  /* Sections */
+  section{padding:4.5rem 0}
+  .section-tag{
+    display:inline-block;
+    font-size:0.78rem;
+    color:var(--gold-deep);
+    text-transform:uppercase;
+    letter-spacing:0.16em;
+    font-weight:600;
+    margin-bottom:0.9rem;
+  }
+  .lede{
+    font-size:1.12rem;
+    color:var(--ink-soft);
+    margin-bottom:1.3rem;
+    line-height:1.7;
+  }
+
+  /* About */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1.6fr;
+    gap:3rem;
+    align-items:start;
+  }
+  .portrait{
+    background:linear-gradient(135deg,var(--burgundy-light) 0%,var(--burgundy-deep) 100%);
+    aspect-ratio:3/4;
+    border-radius:var(--radius);
+    border:1px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold-soft);
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.15rem;
+    text-align:center;
+    padding:2rem;
+    box-shadow:var(--shadow);
+  }
+  .portrait-frame{
+    border:1px solid rgba(201,161,101,0.5);
+    padding:1.2rem;
+    border-radius:4px;
+  }
+
+  /* Niche capture section */
+  .niche-section{
+    background:var(--cream-soft);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .niche-callout{
+    background:var(--burgundy-deep);
+    color:var(--cream);
+    padding:2.4rem 2.2rem;
+    border-radius:var(--radius);
+    border-left:4px solid var(--gold);
+    margin:2rem 0;
+    box-shadow:var(--shadow);
+  }
+  .niche-callout p{color:var(--cream-deep);margin-bottom:0.8rem}
+  .niche-callout p:last-child{margin-bottom:0}
+  .niche-callout strong{color:var(--gold-soft);font-weight:600}
+  .niche-list{
+    list-style:none;
+    margin:1.5rem 0;
+  }
+  .niche-list li{
+    padding:0.9rem 0 0.9rem 1.8rem;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    color:var(--ink-soft);
+  }
+  .niche-list li::before{
+    content:"\25C6";
+    position:absolute;
+    left:0;
+    top:0.95rem;
+    color:var(--gold);
+    font-size:0.85rem;
+  }
+  .niche-list li:last-child{border-bottom:none}
+  .niche-list strong{color:var(--burgundy-deep)}
+
+  /* Press grid */
+  .press-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1.4rem;
+    margin:2rem 0;
+  }
+  .press-card{
+    background:var(--cream-soft);
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    padding:1.7rem 1.4rem;
+    border-radius:var(--radius);
+    transition:transform 0.2s ease,box-shadow 0.2s ease;
+  }
+  .press-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .press-name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.4rem;
+    font-weight:600;
+    color:var(--burgundy-deep);
+    margin-bottom:0.5rem;
+  }
+  .press-type{
+    font-size:0.78rem;
+    color:var(--gold-deep);
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    margin-bottom:0.6rem;
+    font-weight:600;
+  }
+  .press-detail{font-size:0.92rem;color:var(--ink-soft);line-height:1.55}
+
+  .awards-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.4rem;
+    margin-top:2rem;
+  }
+  .award-card{
+    background:var(--burgundy-deep);
+    color:var(--cream);
+    padding:1.5rem;
+    border-radius:var(--radius);
+    border:1px solid var(--gold);
+    text-align:center;
+  }
+  .award-card h4{color:var(--gold-soft);font-family:'Cormorant Garamond',serif;font-size:1.25rem}
+  .award-card p{color:var(--cream-deep);font-size:0.92rem;margin:0}
+
+  /* Vino Vino */
+  .vinovino-section{
+    background:linear-gradient(135deg,var(--burgundy-deep) 0%,var(--burgundy) 100%);
+    color:var(--cream);
+    padding:4rem 0;
+  }
+  .vinovino-section h2{color:var(--cream)}
+  .vinovino-section h2 em{color:var(--gold-soft);font-style:italic}
+  .vinovino-section .section-tag{color:var(--gold-soft)}
+  .vinovino-section p{color:var(--cream-deep)}
+  .vinovino-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:2.5rem;
+    align-items:center;
+    margin-top:2rem;
+  }
+  .vinovino-box{
+    background:rgba(246,239,226,0.06);
+    border:1px solid rgba(176,137,71,0.4);
+    padding:2rem;
+    border-radius:var(--radius);
+  }
+  .vinovino-box h3{color:var(--gold-soft);font-family:'Cormorant Garamond',serif}
+  .vinovino-box ul{list-style:none;margin-top:1rem}
+  .vinovino-box ul li{
+    padding:0.5rem 0 0.5rem 1.4rem;
+    position:relative;
+    color:var(--cream-deep);
+    font-size:0.95rem;
+  }
+  .vinovino-box ul li::before{
+    content:"\2014";
+    position:absolute;
+    left:0;
+    color:var(--gold-soft);
+  }
+
+  /* Audit table */
+  .audit-section{background:var(--cream)}
+  .audit-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:1.8rem;
+    background:var(--cream-soft);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .audit-table th{
+    background:var(--burgundy-deep);
+    color:var(--cream);
+    padding:1.05rem 1.1rem;
+    text-align:left;
+    font-weight:500;
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+  .audit-table td{
+    padding:1.05rem 1.1rem;
+    border-bottom:1px solid var(--line);
+    font-size:0.93rem;
+    color:var(--ink-soft);
+    vertical-align:top;
+  }
+  .audit-table tr:last-child td{border-bottom:none}
+  .audit-table tr:nth-child(even) td{background:rgba(176,137,71,0.04)}
+  .query-cell{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--burgundy-deep);font-size:1rem}
+  .miss{color:#8b1a1a;font-weight:600;font-size:0.85rem;letter-spacing:0.04em;text-transform:uppercase}
+  .who{color:var(--ink-soft);font-size:0.88rem}
+
+  .audit-summary{
+    margin-top:2rem;
+    background:var(--burgundy-deep);
+    color:var(--cream);
+    padding:1.8rem 2rem;
+    border-radius:var(--radius);
+    border-left:4px solid var(--gold);
+  }
+  .audit-summary strong{color:var(--gold-soft);font-size:1.4rem;font-family:'Cormorant Garamond',serif}
+  .audit-summary p{color:var(--cream-deep);margin:0}
+
+  /* What we'd build */
+  .build-section{background:var(--cream-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .build-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.3rem;
+    margin-top:2rem;
+  }
+  .build-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:1.5rem 1.4rem;
+    border-radius:var(--radius);
+    border-top:3px solid var(--burgundy);
+  }
+  .build-card h4{
+    color:var(--burgundy-deep);
+    font-family:'Inter',sans-serif;
+    font-size:0.95rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:0.7rem;
+    font-weight:600;
+  }
+  .build-card p{font-size:0.91rem;color:var(--ink-soft);margin:0;line-height:1.55}
+  .build-card code{
+    background:rgba(74,14,31,0.07);
+    color:var(--burgundy-deep);
+    padding:0.1rem 0.4rem;
+    border-radius:3px;
+    font-size:0.84rem;
+    font-family:'Courier New',monospace;
+  }
+
+  /* Why now */
+  .whynow-section{background:var(--cream)}
+  .whynow-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.4rem;
+    margin-top:2rem;
+  }
+  .whynow-card{
+    padding:1.7rem;
+    border-left:3px solid var(--gold);
+    background:var(--cream-soft);
+    border-radius:0 var(--radius) var(--radius) 0;
+  }
+  .whynow-card h4{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--burgundy-deep)}
+  .whynow-card p{font-size:0.93rem;margin:0}
+
+  /* FAQ */
+  .faq-section{
+    background:var(--burgundy-deep);
+    color:var(--cream);
+  }
+  .faq-section h2{color:var(--cream)}
+  .faq-section .section-tag{color:var(--gold-soft)}
+  .faq-section .lede{color:var(--cream-deep)}
+  details{
+    background:rgba(246,239,226,0.06);
+    border:1px solid rgba(176,137,71,0.3);
+    border-radius:var(--radius);
+    margin-bottom:1rem;
+    padding:0;
+    overflow:hidden;
+  }
+  details[open]{border-color:var(--gold)}
+  summary{
+    padding:1.3rem 1.5rem;
+    cursor:pointer;
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.2rem;
+    color:var(--cream);
+    font-weight:600;
+    list-style:none;
+    position:relative;
+    padding-right:3rem;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";
+    position:absolute;
+    right:1.5rem;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--gold-soft);
+    font-size:1.6rem;
+    font-weight:300;
+    transition:transform 0.2s ease;
+  }
+  details[open] summary::after{content:"\2013"}
+  details > div{
+    padding:0 1.5rem 1.4rem;
+    color:var(--cream-deep);
+    font-size:0.95rem;
+    line-height:1.7;
+  }
+
+  /* Footer */
+  footer{
+    background:#1a0510;
+    color:var(--cream-deep);
+    padding:3rem 0 2rem;
+    text-align:center;
+    border-top:3px solid var(--gold);
+  }
+  footer p{color:var(--cream-deep);font-size:0.9rem;margin-bottom:0.6rem}
+  footer a{color:var(--gold-soft);border-bottom-color:rgba(176,137,71,0.4)}
+  footer a:hover{color:var(--cream)}
+  .footer-signoff{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.15rem;
+    color:var(--gold-soft);
+    margin-top:1.5rem;
+    font-style:italic;
+  }
+  .footer-meta{font-size:0.78rem;color:rgba(236,226,204,0.55);margin-top:1.2rem}
+
+  /* Responsive */
+  @media (max-width:760px){
+    section{padding:3rem 0}
+    .hero{padding:3.6rem 0 2.8rem}
+    .about-grid,.vinovino-grid{grid-template-columns:1fr;gap:2rem}
+    .portrait{max-width:320px;margin:0 auto}
+    nav ul{gap:1rem}
+    nav a{font-size:0.82rem}
+    .audit-table{font-size:0.85rem}
+    .audit-table th,.audit-table td{padding:0.8rem 0.7rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav-wrap">
+      <a href="#" class="brand">Stone's Throw <span>Winery</span></a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#wines">Wines</a></li>
+          <li><a href="#audit">Audit</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>28 years. Door County's only all-California-grape winery. Wine Spectator. Food Network. Wine Enthusiast. <em>Zero of five AI engines say so.</em></h1>
+    <p class="hero-sub">A search-visibility audit for Stone's Throw Winery, Baileys Harbor &middot; the one Door County winery making wine from Napa, Sonoma, and Mendocino fruit, one barrel at a time.</p>
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-num">28</div>
+        <div class="stat-label">Years in Door County</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">1 of 1</div>
+        <div class="stat-label">All-California-grape winery in DC</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">National press features</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-band">
+  <div class="container">
+    <div class="trust-inner">
+      <span class="trust-item">Russell Turco, owner</span>
+      <span class="trust-dot">&middot;</span>
+      <span class="trust-item">Founded 1997 (concept 1993)</span>
+      <span class="trust-dot">&middot;</span>
+      <span class="trust-item">Only all-California-grape winery in Door County</span>
+      <span class="trust-dot">&middot;</span>
+      <span class="trust-item">One barrel at a time micro-vinification</span>
+      <span class="trust-dot">&middot;</span>
+      <span class="trust-item">Napa &middot; Sonoma &middot; Mendocino fruit</span>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="container">
+    <span class="section-tag">About Stone's Throw</span>
+    <h2>A 28-year California winery, hidden in plain sight on County Rd E.</h2>
+    <div class="about-grid">
+      <div class="portrait">
+        <div class="portrait-frame">
+          Russell Turco<br>
+          <em>Founder &amp; Winemaker</em><br>
+          <span style="font-size:0.85rem;opacity:0.8">portrait placeholder &middot; replace with hi-res image at kickoff</span>
+        </div>
+      </div>
+      <div>
+        <p class="lede">Russell Turco started Stone's Throw as a concept in 1993 and opened the winery doors in 1997. The land sits at 3382 County Rd E in Baileys Harbor, a few minutes off the main run through Door County wine country.</p>
+        <p>The deliberate choice that has defined the winery for nearly three decades: every wine at Stone's Throw is made from California fruit. Napa Valley. Sonoma County. Mendocino. Trucked in, crushed on-site, fermented and aged one barrel at a time in the Door County facility.</p>
+        <p>It is the only winery in Door County operating this way. Most peer wineries in the peninsula build their identity around Wisconsin fruit wines and cold-hardy hybrids. Stone's Throw made the opposite call in 1993 and held to it for the full 28 years since.</p>
+        <p>The result is a winery that looks geographically like Door County and tastes varietally like Northern California, with cabernet, zinfandel, syrah, chardonnay, and pinot programs running alongside a sister wine bar, Vino Vino at STW, on the same property.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wines" class="niche-section">
+  <div class="container">
+    <span class="section-tag">Niche-Capture Moat</span>
+    <h2>The only all-California-grape winery in Door County. That sentence is the entire moat.</h2>
+    <p class="lede">Door County has more than a dozen working wineries. They built their reputations on cherry wine, cranberry wine, apple wine, and cold-hardy hybrids grown on the peninsula. The local fruit story is the dominant Door County wine story.</p>
+    <p>Stone's Throw is the exception. One winery in the entire region built around the premise that the best fruit in America comes from three California counties, and the right move is to bring it east instead of growing something different here.</p>
+
+    <div class="niche-callout">
+      <p><strong>Why this matters for search.</strong></p>
+      <p>When a wine traveler types "Door County winery California grapes" or "Napa-style winery Wisconsin" or "small-batch California winery Midwest" into Google, Perplexity, ChatGPT, Claude, or Gemini, there is exactly one correct answer in the state. The answer is Stone's Throw Winery, Baileys Harbor.</p>
+      <p>At present, none of the five AI engines surface that answer. The query returns either generic Door County winery roundups (where Stone's Throw is one bullet among ten) or California winery roundups that exclude the Midwest entirely.</p>
+    </div>
+
+    <h3>The micro-vinification difference</h3>
+    <p>One barrel at a time is not a tagline. It is the production method. Each lot of fruit is fermented in a small vessel, pressed, and aged in its own barrel, then bottled as a discrete vintage. That is the production constraint that lets Stone's Throw release wines from named California vineyards rather than blended large-volume cuvees.</p>
+
+    <ul class="niche-list">
+      <li><strong>Napa Valley fruit programs</strong> &middot; cabernet sauvignon, chardonnay, and zinfandel from named appellations brought east each harvest.</li>
+      <li><strong>Sonoma County fruit programs</strong> &middot; pinot noir and chardonnay from Russian River and surrounding AVAs, vinified individually.</li>
+      <li><strong>Mendocino fruit programs</strong> &middot; cooler-climate lots, often the small-batch releases that move first at the tasting room.</li>
+      <li><strong>One barrel at a time</strong> &middot; no large-tank blending, no commodity fruit, no shortcuts the volume model would force.</li>
+      <li><strong>28 years of vintage continuity</strong> &middot; the same winemaker, the same method, the same three California regions, since 1997.</li>
+    </ul>
+
+    <p>That production story is what national press picked up on. It is also the story that is missing from every AI engine search result the audit covers.</p>
+  </div>
+</section>
+
+<section id="press">
+  <div class="container">
+    <span class="section-tag">National Press &amp; Regional Awards</span>
+    <h2>Three national publications. Two best-of awards. Verifiable, dated, and almost entirely missing from AI search.</h2>
+    <p class="lede">National wine press does not feature small Midwest wineries casually. Stone's Throw has been covered in three of the four highest-readership wine and food publications in the country. The regional best-of awards add another layer that local-search engines should be picking up and currently are not.</p>
+
+    <div class="press-grid">
+      <div class="press-card">
+        <div class="press-type">National wine press</div>
+        <div class="press-name">Wine Spectator</div>
+        <p class="press-detail">The benchmark American wine publication. Coverage of Stone's Throw is the kind of credential most state wineries spend a career chasing.</p>
+      </div>
+      <div class="press-card">
+        <div class="press-type">National food press</div>
+        <div class="press-name">Food Network</div>
+        <p class="press-detail">Broadcast and digital coverage. Reaches a destination-travel audience that is the right fit for a Door County tasting-room visit.</p>
+      </div>
+      <div class="press-card">
+        <div class="press-type">National wine press</div>
+        <div class="press-name">Wine Enthusiast</div>
+        <p class="press-detail">The second of the two American wine titles that move trade and consumer attention. Coverage validates the California-grape program.</p>
+      </div>
+    </div>
+
+    <div class="awards-row">
+      <div class="award-card">
+        <h4>Lux Life</h4>
+        <p>Best Wisconsin Wine Bar &middot; awarded to Vino Vino at STW, the sister venue on the Stone's Throw property.</p>
+      </div>
+      <div class="award-card">
+        <h4>Door County Magazine</h4>
+        <p>Best Winery &middot; the local readership award that confirms the position inside the peninsula's own wine scene.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:2rem">Five separate third-party credentials. All five are verifiable. Three of them are national. None of the five reliably appear when an AI engine is asked about Wisconsin wineries, Door County wineries, or California-grape wineries outside California. That is the gap the audit measures.</p>
+  </div>
+</section>
+
+<section id="vinovino" class="vinovino-section">
+  <div class="container">
+    <span class="section-tag">Sister Venue</span>
+    <h2>Vino Vino at STW &middot; <em>the wine bar on the property.</em></h2>
+    <div class="vinovino-grid">
+      <div>
+        <p>Vino Vino is the sister venue to Stone's Throw, operating on the same Baileys Harbor property. It is the tasting room and wine bar where visitors meet the California-grape program in person, by the glass, alongside the bottle list.</p>
+        <p>It is also the venue that carries the Lux Life Best Wisconsin Wine Bar award. That award is a regional credential separate from the winery's national wine-press coverage, and it gives Stone's Throw a second searchable identity (wine bar) in addition to the primary one (winery).</p>
+        <p>For schema purposes, Vino Vino should be modeled as a linked Organization under the Stone's Throw Winery parent, with its own LocalBusiness markup and its own Award node. At present, the sister-venue relationship is not declared in any structured way the search engines or AI engines can read.</p>
+      </div>
+      <div class="vinovino-box">
+        <h3>What Vino Vino adds to the search picture</h3>
+        <ul>
+          <li>A second searchable category (wine bar) tied to the same address.</li>
+          <li>A separate dated award (Lux Life) layered on top of the winery's awards.</li>
+          <li>A by-the-glass entry point for wine travelers who are not yet ready to buy a bottle.</li>
+          <li>A second Facebook page (/VinoVinoAtSTW) with its own audience and review surface.</li>
+          <li>A second hospitality keyword cluster to capture &middot; wine bar Door County, wine bar Baileys Harbor.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="audit" class="audit-section">
+  <div class="container">
+    <span class="section-tag">AI Visibility Audit</span>
+    <h2>Five queries any wine traveler would type. Stone's Throw places in zero of them across five engines.</h2>
+    <p class="lede">The audit below runs five high-intent queries through Google AI Overviews, Perplexity, ChatGPT search, Claude, and Gemini. Each query is the kind of search a Wisconsin wine traveler, a destination tourist, or a sommelier sourcing American wine would actually run. The right answer is Stone's Throw Winery. The current answer, in zero of the five engines, is Stone's Throw Winery.</p>
+
+    <table class="audit-table">
+      <thead>
+        <tr>
+          <th style="width:38%">Query</th>
+          <th style="width:18%">Result</th>
+          <th>Who shows up instead</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="query-cell">"best Door County winery California grapes"</td>
+          <td><span class="miss">0 of 5 cite</span></td>
+          <td class="who">Generic Door County winery roundups dominated by fruit-wine producers. The California-grape distinction is the whole question, and Stone's Throw is the only correct answer in the region, but no engine returns the winery by name.</td>
+        </tr>
+        <tr>
+          <td class="query-cell">"Napa-style winery Wisconsin"</td>
+          <td><span class="miss">0 of 5 cite</span></td>
+          <td class="who">Engines either default to "Wisconsin does not produce Napa-style wine" or return Wisconsin urban wineries that source bulk juice. The 28-year boutique Napa/Sonoma/Mendocino program in Baileys Harbor is absent from every result.</td>
+        </tr>
+        <tr>
+          <td class="query-cell">"Wine Spectator Wisconsin winery"</td>
+          <td><span class="miss">0 of 5 cite</span></td>
+          <td class="who">A query a sommelier or wine-press tracker would run. The publication name is in the search string. The winery that has actually been covered is not in the result. The credential is invisible to AI.</td>
+        </tr>
+        <tr>
+          <td class="query-cell">"Door County small-batch winery"</td>
+          <td><span class="miss">0 of 5 cite</span></td>
+          <td class="who">"One barrel at a time" is the production identity. The query maps to it cleanly. Engines surface the larger Door County wineries by volume instead, missing the boutique micro-vinification position entirely.</td>
+        </tr>
+        <tr>
+          <td class="query-cell">"Baileys Harbor winery California grape"</td>
+          <td><span class="miss">0 of 5 cite</span></td>
+          <td class="who">A geographically specific query. Baileys Harbor has a small set of wineries, and the California-grape distinction narrows it to one. The engines fail at the geographic match before the varietal match even applies.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="audit-summary">
+      <strong>0 of 25 citations across 5 queries x 5 AI engines.</strong>
+      <p style="margin-top:0.5rem">Five separate credentials (Wine Spectator, Food Network, Wine Enthusiast, Lux Life, Door County Magazine), a 28-year operating history, and a niche so specific it has exactly one correct answer in the entire region. None of it reaches the answer surface of any major AI engine. The gap is not authority. The gap is structured-data exposure.</p>
+    </div>
+  </div>
+</section>
+
+<section class="build-section">
+  <div class="container">
+    <span class="section-tag">Repair Plan</span>
+    <h2>What we would build, and why the AI engines would start picking it up.</h2>
+    <p class="lede">The credentials already exist. The history already exists. The niche position already exists. What is missing is the structured, schema-validated, AI-readable surface that lets engines connect "Door County California-grape winery" to Stone's Throw on the first pass. The build below addresses each layer of that gap.</p>
+
+    <div class="build-grid">
+      <div class="build-card">
+        <h4>Organization &amp; Winery schema</h4>
+        <p>Full <code>Organization</code> + <code>Winery</code> JSON-LD with <code>foundingDate</code> "1997-01-01", concept-stage 1993 noted in description, address, geo, and parent-entity declarations. The baseline that every other claim hangs off of.</p>
+      </div>
+      <div class="build-card">
+        <h4>Person schema for Russell Turco</h4>
+        <p>A <code>Person</code> entity for Russell as founder and winemaker, linked to the <code>Organization</code> via <code>founder</code> and <code>employee</code>. The 28-year continuity becomes a machine-readable fact rather than an in-prose claim.</p>
+      </div>
+      <div class="build-card">
+        <h4>Niche-capture authority page</h4>
+        <p>A dedicated long-form page titled around "the only all-California-grape winery in Door County," with internal anchors for Napa, Sonoma, and Mendocino programs. The page the AI engines would actually cite when the user asks the question.</p>
+      </div>
+      <div class="build-card">
+        <h4>Award schema &times; 2</h4>
+        <p><code>Award</code> nodes for Lux Life Best Wisconsin Wine Bar (attached to Vino Vino) and Door County Magazine Best Winery (attached to Stone's Throw). Two separate machine-readable accolades, not buried in marketing copy.</p>
+      </div>
+      <div class="build-card">
+        <h4>MentionedIn schema &times; 3</h4>
+        <p><code>mentionedIn</code> references to Wine Spectator, Food Network, and Wine Enthusiast as <code>CreativeWork</code> nodes. Press the engines can verify, not press the engines have to guess at.</p>
+      </div>
+      <div class="build-card">
+        <h4>Per-vintage Product schema</h4>
+        <p>A <code>Product</code> entry per active release, with vintage year, varietal, and source-AVA fields (Napa Valley, Sonoma County, Mendocino). The bottle-list itself becomes searchable structured data, not just an image-driven menu.</p>
+      </div>
+      <div class="build-card">
+        <h4>LocalBusiness for Baileys Harbor</h4>
+        <p>A full <code>LocalBusiness</code> node with the 3382 County Rd E address, open hours, tasting-room category, and accessibility data. Map-pack and local-search infrastructure that currently is sparse or inconsistent.</p>
+      </div>
+      <div class="build-card">
+        <h4>FAQPage with high-intent questions</h4>
+        <p>A <code>FAQPage</code> answering the exact questions the audit queries imply, so engines can pull a direct answer rather than reconstruct one from scratch. Each Q matched to a verified A on the page.</p>
+      </div>
+      <div class="build-card">
+        <h4>Vino Vino sister-venue Organization</h4>
+        <p>A linked <code>Organization</code> for Vino Vino at STW, with its own <code>LocalBusiness</code>, its own award, and a declared <code>subOrganization</code> relationship under Stone's Throw. The sister-venue connection becomes explicit, not implicit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="whynow-section">
+  <div class="container">
+    <span class="section-tag">Why Now</span>
+    <h2>The Door County season and the AI search shift are both turning at the same time.</h2>
+    <div class="whynow-grid">
+      <div class="whynow-card">
+        <h4>The season starts soon</h4>
+        <p>Door County's tasting-room year ramps from late spring through the fall festival weeks. Whatever the AI engines say about Door County wineries in May and June is what wine travelers act on in July and August.</p>
+      </div>
+      <div class="whynow-card">
+        <h4>AI search is now part of the consideration set</h4>
+        <p>Travelers no longer stop at the Google blue links. Perplexity, ChatGPT, and Gemini are routinely used to pre-plan a peninsula trip. Wineries with no AI surface are simply not on the shortlist.</p>
+      </div>
+      <div class="whynow-card">
+        <h4>The competition cannot replicate the moat</h4>
+        <p>Another Door County winery cannot become the all-California-grape winery in the region. Stone's Throw already is. The position is permanent. The only question is whether the AI engines know.</p>
+      </div>
+      <div class="whynow-card">
+        <h4>The credentials are already in place</h4>
+        <p>No new press to chase, no new awards to win, no new history to build. The structured-data work activates 28 years of credentials that already exist, instead of starting from zero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container container-narrow">
+    <span class="section-tag">Frequently Asked</span>
+    <h2>About the audit and what comes after.</h2>
+    <p class="lede">Four questions that come up when a winery first sees an audit like this one. Direct answers below.</p>
+
+    <details>
+      <summary>How does "0 of 5 AI engines cite us" actually get measured?</summary>
+      <div>The five engines covered are Google AI Overviews, Perplexity, ChatGPT search, Claude, and Gemini. Each of the five test queries is run on each engine, and the result page is reviewed for whether Stone's Throw Winery is named as a primary or secondary source. A miss is recorded if the winery is not named, even if Door County wineries are discussed in general. The audit is repeatable, so the same five queries can be re-run after structured-data work ships to measure the lift directly.</div>
+    </details>
+
+    <details>
+      <summary>Why would schema markup change AI engine behavior?</summary>
+      <div>Large language models that ground their answers in real-time search rely heavily on structured-data signals to decide which entity is the canonical answer for a query. A winery with explicit <code>Organization</code>, <code>Winery</code>, <code>foundingDate</code>, <code>Award</code>, and <code>mentionedIn</code> markup gives the engine direct, machine-readable facts to cite. A winery with only prose descriptions forces the engine to reconstruct the same facts from third-party sources, which is slower, less reliable, and often returns competitors instead.</div>
+    </details>
+
+    <details>
+      <summary>Does the California-grape position actually rank for "Wisconsin winery" too?</summary>
+      <div>It is one of the two strongest positions Stone's Throw has, and the harder of the two to capture without explicit structured data. "Wisconsin winery" is a broad query dominated by the state's largest producers, but "Napa-style winery Wisconsin" or "California-grape winery Wisconsin" narrows the field to a single correct answer. The build plan covers both the broad and narrow queries so the boutique distinction is preserved while the Wisconsin geo-tag is still claimed.</div>
+    </details>
+
+    <details>
+      <summary>How long until the lift would show up in the AI engines?</summary>
+      <div>Schema and authority-page work typically begins surfacing in Google AI Overviews and Perplexity within the first crawl cycle after launch, which is usually two to four weeks. ChatGPT, Claude, and Gemini are slower because their indexes refresh on longer cycles. A realistic expectation is partial lift across two of the five engines in the first month, with the remaining engines catching up over the following two to three months as their indexes re-crawl the property.</div>
+    </details>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <p>Prepared for Stone's Throw Winery &middot; Russell Turco</p>
+    <p>3382 County Rd E, Baileys Harbor, Wisconsin &middot; <a href="https://stonesthrowwinery.com">stonesthrowwinery.com</a></p>
+    <p>Audit window: May 2026 &middot; queries refresh on request</p>
+    <p class="footer-signoff">Andrei Givero &middot; <a href="https://andrei170.github.io/ag1/#services">andrei170.github.io/ag1/#services</a></p>
+    <p class="footer-meta">This is a search-visibility audit prepared as a no-obligation conversation starter. All press, awards, and operating details cited above are independently verifiable through Wine Spectator, Food Network, Wine Enthusiast, Lux Life, and Door County Magazine archives.</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization","Winery"],
+      "@id": "https://stonesthrowwinery.com/#organization",
+      "name": "Stone's Throw Winery",
+      "alternateName": "Stone's Throw",
+      "url": "https://stonesthrowwinery.com",
+      "foundingDate": "1997-01-01",
+      "description": "The only all-California-grape winery in Door County, Wisconsin. Micro-vinification of Napa, Sonoma, and Mendocino fruit, one barrel at a time, since 1997 (concept 1993).",
+      "founder": {"@id": "https://stonesthrowwinery.com/#russell-turco"},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3382 County Rd E",
+        "addressLocality": "Baileys Harbor",
+        "addressRegion": "WI",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.instagram.com/stonesthrowwine",
+        "https://www.facebook.com/StonesThrowWine"
+      ],
+      "email": "sales@stonesthrowwinery.com",
+      "award": [
+        "Door County Magazine - Best Winery",
+        "Lux Life - Best Wisconsin Wine Bar (Vino Vino at STW)"
+      ],
+      "subOrganization": {"@id": "https://stonesthrowwinery.com/#vinovino"}
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://stonesthrowwinery.com/#localbusiness",
+      "name": "Stone's Throw Winery",
+      "parentOrganization": {"@id": "https://stonesthrowwinery.com/#organization"},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3382 County Rd E",
+        "addressLocality": "Baileys Harbor",
+        "addressRegion": "WI",
+        "addressCountry": "US"
+      },
+      "url": "https://stonesthrowwinery.com"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://stonesthrowwinery.com/#vinovino",
+      "name": "Vino Vino at STW",
+      "description": "Wine bar and sister venue to Stone's Throw Winery on the Baileys Harbor property. Winner of the Lux Life Best Wisconsin Wine Bar award.",
+      "parentOrganization": {"@id": "https://stonesthrowwinery.com/#organization"},
+      "sameAs": ["https://www.facebook.com/VinoVinoAtSTW"],
+      "award": "Lux Life - Best Wisconsin Wine Bar"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://stonesthrowwinery.com/#russell-turco",
+      "name": "Russell Turco",
+      "jobTitle": "Founder and Winemaker",
+      "worksFor": {"@id": "https://stonesthrowwinery.com/#organization"},
+      "description": "Founder and winemaker of Stone's Throw Winery. Started the concept in 1993, opened the winery in 1997, and has run the all-California-grape program continuously since."
+    },
+    {
+      "@type": "Award",
+      "@id": "https://stonesthrowwinery.com/#award-luxlife",
+      "name": "Best Wisconsin Wine Bar",
+      "awardedBy": "Lux Life",
+      "recipient": {"@id": "https://stonesthrowwinery.com/#vinovino"}
+    },
+    {
+      "@type": "Award",
+      "@id": "https://stonesthrowwinery.com/#award-dcmag",
+      "name": "Best Winery",
+      "awardedBy": "Door County Magazine",
+      "recipient": {"@id": "https://stonesthrowwinery.com/#organization"}
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://stonesthrowwinery.com/#mention-winespectator",
+      "name": "Stone's Throw Winery featured in Wine Spectator",
+      "publisher": {"@type": "Organization", "name": "Wine Spectator"},
+      "about": {"@id": "https://stonesthrowwinery.com/#organization"}
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://stonesthrowwinery.com/#mention-foodnetwork",
+      "name": "Stone's Throw Winery featured by Food Network",
+      "publisher": {"@type": "Organization", "name": "Food Network"},
+      "about": {"@id": "https://stonesthrowwinery.com/#organization"}
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://stonesthrowwinery.com/#mention-wineenthusiast",
+      "name": "Stone's Throw Winery featured in Wine Enthusiast",
+      "publisher": {"@type": "Organization", "name": "Wine Enthusiast"},
+      "about": {"@id": "https://stonesthrowwinery.com/#organization"}
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://stonesthrowwinery.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does 0 of 5 AI engines cite us actually get measured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The five engines covered are Google AI Overviews, Perplexity, ChatGPT search, Claude, and Gemini. Each test query is run on each engine and the result page is reviewed for whether Stone's Throw Winery is named as a source. A miss is recorded if the winery is not named, even if Door County wineries are discussed in general."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why would schema markup change AI engine behavior?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Large language models that ground their answers in real-time search rely heavily on structured-data signals to decide which entity is the canonical answer for a query. Explicit Organization, Winery, foundingDate, Award, and mentionedIn markup gives the engine machine-readable facts to cite directly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the California-grape position actually rank for Wisconsin winery queries too?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is one of the two strongest positions Stone's Throw has. Wisconsin winery is a broad query dominated by the state's largest producers, but Napa-style winery Wisconsin or California-grape winery Wisconsin narrows the field to a single correct answer. The build covers both queries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long until the lift would show up in the AI engines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Schema and authority-page work typically begins surfacing in Google AI Overviews and Perplexity within two to four weeks after launch. ChatGPT, Claude, and Gemini are slower because their indexes refresh on longer cycles, with partial lift in the first month and remaining engines catching up over the following two to three months."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
